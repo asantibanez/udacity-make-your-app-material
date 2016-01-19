@@ -18,7 +18,8 @@
 <resources>
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <item name="colorPrimary">#ff0f0f</item>
+        <item name="colorPrimaryDark">#ff0f0f</item>
     </style>
 
     <style name="Theme.Bacon.Detail">
