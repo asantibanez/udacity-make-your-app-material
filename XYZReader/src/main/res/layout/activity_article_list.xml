@@ -27,6 +27,8 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
+                android:layout_marginStart="@dimen/logo_side_margin"
+                android:layout_marginLeft="@dimen/logo_side_margin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/logo"
