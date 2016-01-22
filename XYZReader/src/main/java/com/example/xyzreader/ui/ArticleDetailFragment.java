@@ -34,6 +34,7 @@ import com.example.xyzreader.data.ArticleLoader;
  * tablets) or a {@link ArticleDetailActivity} on handsets.
  */
 public class ArticleDetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
+
     private static final String TAG = "ArticleDetailFragment";
 
     public static final String ARG_ITEM_ID = "item_id";
@@ -109,7 +110,6 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
         });
 
         mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
-        /*
         mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
             @Override
             public void onScrollChanged() {
@@ -119,7 +119,6 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
                 updateStatusBar();
             }
         });
-        */
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
@@ -216,6 +215,11 @@ public class ArticleDetailFragment extends Fragment implements LoaderManager.Loa
 
                         }
                     });
+
+
+            double aspectRatio = mCursor.getDouble(ArticleLoader.Query.ASPECT_RATIO);
+            mPhotoView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
         } else {
             mRootView.setVisibility(View.GONE);
             titleView.setText("N/A");
